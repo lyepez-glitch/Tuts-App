@@ -11,16 +11,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav>
-        <h2>My App</h2>
-        <h3>Tutorials</h3>
-        <h3>Add</h3>
-      </nav>
+
       <form>
          <p>Title</p>
-      <input id = 'title' type = 'text' value = 'pick a title'></input>
+      <input id = 'title' type = 'text' defaultValue = 'pick a title'></input>
       <p>Description</p>
-      <input id = 'description' value='type something here'></input>
+      <input id = 'description' defaultValue='type something here'></input>
       <br></br>
       <input id = 'submit' type = "submit" ></input>
       </form>

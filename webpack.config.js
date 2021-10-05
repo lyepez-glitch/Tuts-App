@@ -3,11 +3,13 @@ module.exports = {
 
   entry: {
     "indexBundle": "./src/index.js",
-    "appBundle": "./src/app.js"
+    "appBundle": "./src/app.js",
+    "tutorialsBundle": "./src/tutorials.js"
   },
   output:{
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].js"
+    filename: "[name].js",
+
   },
   devServer: {
     static: {
@@ -21,7 +23,8 @@ module.exports = {
     rules: [
       {
         test: /.css$/,
-        use: ["style-loader","css-loader"]
+        use: ["style-loader","css-loader"],
+
       },
 
       {

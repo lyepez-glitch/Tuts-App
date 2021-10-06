@@ -12,12 +12,34 @@ class App extends React.Component {
     this.setState = this.setState.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescChange = this.handleDescChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleTitleChange(event){
 
     this.setState({title: event.target.value})
     console.log(this.state.title)
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    // this.state.title
+    // this.state.description
+    $ajax({
+      url: '/tutorials',
+      type = 'POST',
+      data: {
+        'title': this.state.title,
+        'desc': this.state.description
+      },
+      contentType: 'application/json',
+      success: function(result){
+        console.log(result);
+      },
+      error: function(result){
+        console.log(result)
+      }
+    })
   }
 
   handleDescChange(event){
@@ -32,13 +54,13 @@ class App extends React.Component {
     return (
       <div>
 
-      <form>
+      <form onSubmit = {this.handleSubmit}>
          <p>Title</p>
       <input id = 'title' type = 'text' defaultValue = 'pick a title' onChange = {this.handleTitleChange}></input>
       <p>Description</p>
       <input id = 'description' defaultValue='type something here'onChange = {this.handleDescChange}></input>
       <br></br>
-      <input id = 'submit' type = "submit" ></input>
+      <input id = 'submit' type = "submit"  ></input>
       </form>
       </div>
 

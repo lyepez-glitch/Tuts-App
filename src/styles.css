@@ -29,6 +29,19 @@ nav h2,h3 {
   margin-top: 20px
 }
 
-#select {
-  display: inline
+ #select {
+  margin-left: -40px;
 }
+
+ #tutContent {
+  display: inline-block;
+}
+
+#tutlist{
+  margin-left: 50px;
+}
+
+#currentTutorial {
+  margin-left:300px;
+}
+

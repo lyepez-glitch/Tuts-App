@@ -1,4 +1,5 @@
 import React from 'react';
+
 class Tutorials extends React.Component {
   constructor(props){
     super(props)
@@ -12,10 +13,14 @@ class Tutorials extends React.Component {
   render() {
     return (
       <div>
-        <input type = 'text' defaultValue = 'search by title'></input>
-        <button>Search</button>
+      <div>
+        <input id = 'searchtitle' type = 'text' defaultValue = 'search by title'></input>
+        <br></br>
+        <button id = 'search'>Search</button>
+
         <div id ='tutContent'>
-        <h2>Tutorials List</h2>
+
+        <h2 id = 'tutlist'>Tutorials List</h2>
         <select id = 'select'>
           <option value = 'Tut1'>Tut1</option>
         </select>
@@ -23,15 +28,18 @@ class Tutorials extends React.Component {
           <p>Title: {this.state.title}</p>
           <p>Description: {this.state.description}</p>
           <p>Status: {this.state.status}</p>
-          <button>Edit</button>
-        </div>
+          <button id = 'edit'>Edit</button>
 
         </div>
 
 
-        <br></br>
-        <button id = 'remove'>Remove All</button>
+        </div>
 
+      </div>
+
+      <br></br>
+
+      <button id = 'remove'>Remove All</button>
       </div>
     )
   }

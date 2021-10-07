@@ -25,9 +25,9 @@ class App extends React.Component {
     event.preventDefault();
     // this.state.title
     // this.state.description
-    $ajax({
+    $.ajax({
       url: '/tutorials',
-      type = 'POST',
+      type: 'POST',
       data: {
         'title': this.state.title,
         'desc': this.state.description
